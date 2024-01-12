@@ -2265,12 +2265,11 @@ dependencies = [
 [[package]]
 name = "whirlpool-cpi"
 version = "0.1.0"
-source = "git+https://github.com/yugure-orca/whirlpool-cpi?branch=anchor/0.28.0#42cfcb797a48dfb8e37ff8fdd41890b1be0cba83"
+source = "git+https://github.com/orca-so/whirlpool-cpi?branch=anchor/0.28.0#65faccd7237f137112f7e2c5291c25a9a692d4de"
 dependencies = [
  "anchor-lang",
  "anchor-spl",
  "bincode",
- "borsh 0.10.3",
  "default-boxed",
  "solana-program",
 ]

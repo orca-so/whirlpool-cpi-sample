@@ -17,7 +17,7 @@ default = []
 [dependencies]
 anchor-lang = "=0.27.0"
 anchor-spl = "=0.27.0"
-whirlpool-cpi = { git = "https://github.com/yugure-orca/whirlpool-cpi", branch = "anchor/0.27.0" }
+whirlpool-cpi = { git = "https://github.com/orca-so/whirlpool-cpi", branch = "anchor/0.27.0" }
 
 # yep, anchor v0.27.0 supports only this range due to spl-token-2022 (including zk) issue...
 # I think v0.26.0 or v0.28.0 are better option unless you already use v0.27.0.

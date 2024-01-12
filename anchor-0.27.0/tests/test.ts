@@ -34,7 +34,7 @@ describe("whirlpool-cpi-sample", () => {
   const whirlpool_client = buildWhirlpoolClient(whirlpool_ctx);
 
   const transaction_builder_opts: TransactionBuilderOptions = {
-    defaultBuildOption: undefined,
+    defaultBuildOption: { maxSupportedTransactionVersion: "legacy", blockhashCommitment: "confirmed" },
     defaultConfirmationCommitment: "confirmed",
     defaultSendOption: {
       skipPreflight: true,
@@ -287,9 +287,9 @@ describe("whirlpool-cpi-sample", () => {
       .instruction();
 
     const transaction = new TransactionBuilder(connection, wallet, transaction_builder_opts)
-    .addInstruction(wsol_ta)
-    .addInstruction(usdc_ta)
-    .addInstruction({instructions: [swap], cleanupInstructions: [], signers: []});
+      .addInstruction(wsol_ta)
+      .addInstruction(usdc_ta)
+      .addInstruction({instructions: [swap], cleanupInstructions: [], signers: []});
 
     // verification
     const quote = await swapQuoteByInputToken(
@@ -361,10 +361,10 @@ describe("whirlpool-cpi-sample", () => {
       })
       .instruction();
 
-    const transaction = new TransactionBuilder(connection, wallet)
-    .addInstruction(samo_ta)
-    .addInstruction(usdc_ta)
-    .addInstruction({instructions: [swap], cleanupInstructions: [], signers: []});
+    const transaction = new TransactionBuilder(connection, wallet, transaction_builder_opts)
+      .addInstruction(samo_ta)
+      .addInstruction(usdc_ta)
+      .addInstruction({instructions: [swap], cleanupInstructions: [], signers: []});
 
     // verification
     const quote = await swapQuoteByInputToken(
@@ -416,8 +416,8 @@ describe("whirlpool-cpi-sample", () => {
       })
       .instruction();
 
-    const transaction = new TransactionBuilder(connection, wallet)
-    .addInstruction({instructions: [open_position], cleanupInstructions: [], signers: [position_mint_keypair]});
+    const transaction = new TransactionBuilder(connection, wallet, transaction_builder_opts)
+      .addInstruction({instructions: [open_position], cleanupInstructions: [], signers: [position_mint_keypair]});
 
     const signature = await transaction.buildAndExecute();
     await connection.confirmTransaction(signature);
@@ -465,8 +465,8 @@ describe("whirlpool-cpi-sample", () => {
       })
       .instruction();
 
-    const transaction = new TransactionBuilder(connection, wallet)
-    .addInstruction({instructions: [increase_liquidity], cleanupInstructions: [], signers: []});
+    const transaction = new TransactionBuilder(connection, wallet, transaction_builder_opts)
+      .addInstruction({instructions: [increase_liquidity], cleanupInstructions: [], signers: []});
 
     const signature = await transaction.buildAndExecute();
     await connection.confirmTransaction(signature);
@@ -491,7 +491,7 @@ describe("whirlpool-cpi-sample", () => {
       fetcher,
       IGNORE_CACHE
     );
-    const signature1 = await (await samo_usdc_whirlpool.swap(usdc_samo_quote)).buildAndExecute();
+    const signature1 = await (await samo_usdc_whirlpool.swap(usdc_samo_quote)).buildAndExecute(transaction_builder_opts.defaultBuildOption);
     await connection.confirmTransaction(signature1);
 
     const samo_usdc_quote = await swapQuoteByInputToken(
@@ -503,7 +503,7 @@ describe("whirlpool-cpi-sample", () => {
       fetcher,
       IGNORE_CACHE
     );
-    const signature2 = await (await samo_usdc_whirlpool.swap(samo_usdc_quote)).buildAndExecute();
+    const signature2 = await (await samo_usdc_whirlpool.swap(samo_usdc_quote)).buildAndExecute(transaction_builder_opts.defaultBuildOption);
     await connection.confirmTransaction(signature2);
   });
 
@@ -527,8 +527,8 @@ describe("whirlpool-cpi-sample", () => {
       })
       .instruction();
 
-    const transaction = new TransactionBuilder(connection, wallet)
-    .addInstruction({instructions: [update_fees_and_rewards], cleanupInstructions: [], signers: []});
+    const transaction = new TransactionBuilder(connection, wallet, transaction_builder_opts)
+      .addInstruction({instructions: [update_fees_and_rewards], cleanupInstructions: [], signers: []});
 
     const signature = await transaction.buildAndExecute();
     await connection.confirmTransaction(signature);
@@ -571,8 +571,8 @@ describe("whirlpool-cpi-sample", () => {
       })
       .instruction();
 
-    const transaction = new TransactionBuilder(connection, wallet)
-    .addInstruction({instructions: [decrease_liquidity], cleanupInstructions: [], signers: []});
+    const transaction = new TransactionBuilder(connection, wallet, transaction_builder_opts)
+      .addInstruction({instructions: [decrease_liquidity], cleanupInstructions: [], signers: []});
 
     const signature = await transaction.buildAndExecute();
     await connection.confirmTransaction(signature);
@@ -606,8 +606,8 @@ describe("whirlpool-cpi-sample", () => {
       })
       .instruction();
 
-    const transaction = new TransactionBuilder(connection, wallet)
-    .addInstruction({instructions: [collect_fees], cleanupInstructions: [], signers: []});
+    const transaction = new TransactionBuilder(connection, wallet, transaction_builder_opts)
+      .addInstruction({instructions: [collect_fees], cleanupInstructions: [], signers: []});
 
     const signature = await transaction.buildAndExecute();
     await connection.confirmTransaction(signature);
@@ -650,9 +650,9 @@ describe("whirlpool-cpi-sample", () => {
         })
         .instruction();
 
-      const transaction = new TransactionBuilder(connection, wallet, {defaultSendOption: {skipPreflight: true}, defaultBuildOption: undefined, defaultConfirmationCommitment: undefined})
-      .addInstruction(reward_ta)
-      .addInstruction({instructions: [collect_reward], cleanupInstructions: [], signers: []});
+      const transaction = new TransactionBuilder(connection, wallet, transaction_builder_opts)
+        .addInstruction(reward_ta)
+        .addInstruction({instructions: [collect_reward], cleanupInstructions: [], signers: []});
 
       const signature = await transaction.buildAndExecute();
       await connection.confirmTransaction(signature);
@@ -679,8 +679,8 @@ describe("whirlpool-cpi-sample", () => {
       })
       .instruction();
 
-    const transaction = new TransactionBuilder(connection, wallet)
-    .addInstruction({instructions: [close_position], cleanupInstructions: [], signers: []});
+    const transaction = new TransactionBuilder(connection, wallet, transaction_builder_opts)
+      .addInstruction({instructions: [close_position], cleanupInstructions: [], signers: []});
 
     const signature = await transaction.buildAndExecute();
     await connection.confirmTransaction(signature);

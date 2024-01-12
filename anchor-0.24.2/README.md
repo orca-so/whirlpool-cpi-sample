@@ -6,11 +6,12 @@
 - Anchor spl: 0.24.2
 
 ### CLI
-- Solana CLI: 1.9.29 (Rust 1.59.0-dev)
+Use 1.10.41 intentionally. The version of Rust is same between Solana 1.9 and 1.10.
+- Solana CLI: 1.10.41 (Rust 1.59.0-dev)
 - Anchor CLI: 0.24.2
 
 ### Test Run
-1. check Solana CLI version (it should be 1.9.29)
+1. check Solana CLI version (it should be 1.10.41)
 ```
 solana --version
 ```

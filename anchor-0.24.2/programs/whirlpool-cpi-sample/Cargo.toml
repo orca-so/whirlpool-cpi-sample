@@ -17,7 +17,7 @@ default = []
 [dependencies]
 anchor-lang = "=0.24.2"
 anchor-spl = "=0.24.2"
-whirlpool-cpi = { git = "https://github.com/yugure-orca/whirlpool-cpi", branch = "anchor/0.24.2" }
+whirlpool-cpi = { git = "https://github.com/orca-so/whirlpool-cpi", branch = "anchor/0.24.2" }
 
 # MSRV related constraints (solana 1.9 uses Rust 1.59.0-dev)
 solana-program = "~1.9.13"

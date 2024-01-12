@@ -1920,12 +1920,11 @@ dependencies = [
 [[package]]
 name = "whirlpool-cpi"
 version = "0.1.0"
-source = "git+https://github.com/yugure-orca/whirlpool-cpi?branch=anchor/0.26.0#f036955f736f47747ac75e03f7789be3940e938c"
+source = "git+https://github.com/orca-so/whirlpool-cpi?branch=anchor/0.26.0#5e6f68fd31d5e79c57213385af758e41262fcb1e"
 dependencies = [
  "anchor-lang",
  "anchor-spl",
  "bincode",
- "borsh",
  "default-boxed",
  "jobserver",
  "proc-macro-crate 1.2.1",

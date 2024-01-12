@@ -17,7 +17,7 @@ default = []
 [dependencies]
 anchor-lang = "=0.28.0"
 anchor-spl = "=0.28.0"
-whirlpool-cpi = { git = "https://github.com/yugure-orca/whirlpool-cpi", branch = "anchor/0.28.0" }
+whirlpool-cpi = { git = "https://github.com/orca-so/whirlpool-cpi", branch = "anchor/0.28.0" }
 
 solana-program = ">=1.14, <1.17"
 
