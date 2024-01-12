@@ -1,0 +1,13 @@
+[features]
+seeds = false
+skip-lint = false
+
+[programs.localnet]
+whirlpool_cpi_sample = "Agr1zAhadb4mNd54LaJoqTLV79YfXmWrMrx6TGsw39H9"
+
+[provider]
+cluster = "Localnet"
+wallet = "../tests/test-wallet.json"
+
+[scripts]
+test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts"

@@ -1,0 +1,23 @@
+[package]
+name = "whirlpool-cpi-sample"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "whirlpool_cpi_sample"
+
+[features]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+cpi = ["no-entrypoint"]
+default = []
+
+[dependencies]
+anchor-lang = "=0.24.2"
+anchor-spl = "=0.24.2"
+whirlpool-cpi = { git = "https://github.com/yugure-orca/whirlpool-cpi", branch = "anchor/0.24.2" }
+
+# MSRV related constraints (solana 1.9 uses Rust 1.59.0-dev)
+solana-program = "~1.9.13"

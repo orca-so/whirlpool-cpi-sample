@@ -1,0 +1,25 @@
+[package]
+name = "whirlpool-cpi-sample"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "whirlpool_cpi_sample"
+
+[features]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+cpi = ["no-entrypoint"]
+default = []
+
+[dependencies]
+anchor-lang = "=0.29.0"
+anchor-spl = "=0.29.0"
+whirlpool-cpi = { git = "https://github.com/yugure-orca/whirlpool-cpi", branch = "anchor/0.29.0" }
+
+solana-program = ">=1.16, <1.18"
+
+# https://github.com/solana-labs/solana/issues/34609
+ahash = "=0.8.6"
