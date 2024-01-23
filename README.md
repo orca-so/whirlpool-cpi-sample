@@ -33,6 +33,8 @@ You can write a contract to execute CPI to Whirlpool based on the following samp
 | ProxyCollectFees | execute ``collect_fees`` instruction via CPI |
 | ProxyCollectReward | execute ``collect_reward`` instruction via CPI |
 | ProxyClose | execute ``close_position`` instruction via CPI |
+| ProxyInitializePool | execute ``initialize_pool`` instruction via CPI |
+| ProxyInitializeTickArray | execute ``initialize_tick_array`` instruction via CPI |
 
 ## ``whirlpool-cpi`` crate
 The following crate is used to read accounts and execute CPI:
