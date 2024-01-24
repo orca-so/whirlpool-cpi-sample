@@ -1,6 +1,14 @@
 # Whirlpool CPI Sample
 This repo contains samples contracts which interact with Whirlpool via CPI.
 
+This sample will just proxy Whirlpool instructions via CPI.
+
+![sample1](https://github.com/orca-so/whirlpool-cpi-sample/assets/109891005/ec018853-8b2b-4f9b-98c0-3c23fff16277)
+
+Based on this sample, you can build a program executing Whirlpool instructions via CPI.
+
+![sample2](https://github.com/orca-so/whirlpool-cpi-sample/assets/109891005/61e63aff-77f0-4c90-ae26-95b3758088ae)
+
 ## Anchor / Solana version mapping
 
 | Directory | Anchor version | Solana version (rustc version) |
