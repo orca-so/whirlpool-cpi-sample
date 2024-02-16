@@ -1920,7 +1920,7 @@ dependencies = [
 [[package]]
 name = "whirlpool-cpi"
 version = "0.1.0"
-source = "git+https://github.com/orca-so/whirlpool-cpi?branch=anchor/0.26.0#5e6f68fd31d5e79c57213385af758e41262fcb1e"
+source = "git+https://github.com/orca-so/whirlpool-cpi?branch=anchor/0.26.0#a6efec961c611f5119a70c05ecfc1541be9277ef"
 dependencies = [
  "anchor-lang",
  "anchor-spl",

@@ -33,7 +33,7 @@ pub struct ProxySwap<'info> {
   #[account(mut, has_one = whirlpool)]
   pub tick_array_2: AccountLoader<'info, TickArray>,
 
-  #[account(seeds = [b"oracle", whirlpool.key().as_ref()], bump, seeds::program = whirlpool_program.key())]
+  #[account(mut, seeds = [b"oracle", whirlpool.key().as_ref()], bump, seeds::program = whirlpool_program.key())]
   /// CHECK: checked by whirlpool_program
   pub oracle: UncheckedAccount<'info>,
 }

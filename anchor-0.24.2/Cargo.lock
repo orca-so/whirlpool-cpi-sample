@@ -1377,7 +1377,7 @@ dependencies = [
 [[package]]
 name = "whirlpool-cpi"
 version = "0.1.0"
-source = "git+https://github.com/orca-so/whirlpool-cpi?branch=anchor/0.24.2#104891a36c0306670ab5f07295c77ec68ca96d2e"
+source = "git+https://github.com/orca-so/whirlpool-cpi?branch=anchor/0.24.2#5f51af78d800b983bc67d62322cf85335b1035f6"
 dependencies = [
  "ahash 0.7.6",
  "anchor-lang",
