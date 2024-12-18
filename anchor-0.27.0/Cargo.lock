@@ -1889,19 +1889,12 @@ dependencies = [
 
 [[package]]
 name = "whirlpool-cpi"
-version = "0.1.0"
-source = "git+https://github.com/orca-so/whirlpool-cpi?branch=anchor/0.27.0#6fe8040c9fba0e2016de3a6bf30d47da746f4bb8"
+version = "0.1.3"
+source = "git+https://github.com/orca-so/whirlpool-cpi?branch=anchor/0.27.0#8794f46247e5224a1fdba83ef526aa3a10ac72fd"
 dependencies = [
  "anchor-lang",
- "anchor-spl",
  "bincode",
- "blake3",
  "default-boxed",
- "jobserver",
- "proc-macro-crate 1.2.1",
- "regex",
- "solana-program",
- "spl-associated-token-account",
 ]
 
 [[package]]
